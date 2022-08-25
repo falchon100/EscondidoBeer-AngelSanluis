@@ -1,0 +1,1 @@
+import "../style/Footer.css"
