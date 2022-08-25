@@ -43,7 +43,14 @@ font-family: 'Fredoka One', cursive
     padding: 5px;
     padding: 10px;
 }
+.nav_a{
+    text-decoration: none;
+    color: white;
+}
 
+.nav_a:hover{
+    color: #bb52ba;
+}
 .nav_hamb{
     font-size: 10px;
     font-size: 45px;
