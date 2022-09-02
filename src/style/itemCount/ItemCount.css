@@ -1,0 +1,26 @@
+.ItemCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    width: 200px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 15px;
+}
+
+.ItemCount_Button{
+    background-color: #380E52;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 50%;
+}
+
+.ItemCount_p{
+    padding: 0 10px;
+}
+
+p{
+    margin: 0;
+}

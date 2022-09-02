@@ -2,6 +2,7 @@ import React from 'react'
 
 const aparecer= ()=> {
     alert('hola')
+ 
 }
 const Hamb = () => {
   return (

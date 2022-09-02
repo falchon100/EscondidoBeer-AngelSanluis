@@ -2,6 +2,7 @@ import "../../style/navbar/navbar.css"
 import "../../components/Cartwidget/Cartwidget.js"
 import Cartwidget from "../../components/Cartwidget/Cartwidget.js"
 import Hamb from "../Hamb/Hamb"
+
 export function Navbar(){
     return (
     <nav className="nav container-fluid">
@@ -12,7 +13,8 @@ export function Navbar(){
         <li className="nav_li"><a href="/" className="nav_a" >Pedido Online</a></li>
         <Cartwidget />
      </ul>
-      <Hamb/>
+      <Hamb 
+       />
     </nav>)}
 
     
