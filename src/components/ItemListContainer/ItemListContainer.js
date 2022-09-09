@@ -1,8 +1,10 @@
 import React from "react";
-import { Itemcount } from "../ItemCount/ItemCount.js";
+import { ItemCount } from "../ItemCount/ItemCount.js";
 import { data } from "../mockData";
 import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
+import "./ItemListContainer.css";
+
 const ItemListContainer = ({ greeting }) => {
   const [producList, setProductList] = useState([]);
   useEffect(() => {
@@ -19,6 +21,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
+      <p className="titulo">{greeting} </p>
       <ItemList lista={producList} />
     </>
   );

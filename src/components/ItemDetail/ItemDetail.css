@@ -1,0 +1,9 @@
+.itemDetallado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    border: solid 2px grey;
+    width: 400px;
+}

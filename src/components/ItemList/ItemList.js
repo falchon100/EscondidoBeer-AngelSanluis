@@ -1,9 +1,8 @@
 import React from "react";
 import Item from "../Item/Item";
-import ItemCount from "../ItemCount/ItemCount";
+import "./ItemList.css";
 
 export const ItemList = ({ lista }) => {
-  console.log(lista);
   return (
     <>
       <div className="lista">
@@ -13,6 +12,7 @@ export const ItemList = ({ lista }) => {
             title={product.title}
             precio={product.precio}
             img={product.img}
+            stock={product.stock}
           />
         ))}
       </div>
