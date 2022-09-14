@@ -3,7 +3,6 @@ import "../../style/itemCount/ItemCount.css";
 import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-  /*   const stock = 10; */
   const [items, setitems] = useState(initial);
   const quitar = () => {
     items > 0 ? setitems(items - 1) : alert("no tengo items");

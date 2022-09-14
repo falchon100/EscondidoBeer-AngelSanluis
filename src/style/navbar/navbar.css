@@ -42,6 +42,12 @@ font-family: 'Fredoka One', cursive
 .nav_li{
     padding: 5px;
     padding: 10px;
+
+}
+
+.nav_li a{
+    text-decoration: none;
+    color: white;
 }
 .nav_a{
     text-decoration: none;

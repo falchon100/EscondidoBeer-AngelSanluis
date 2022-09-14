@@ -1,5 +1,4 @@
 import "./ItemDetail.css";
-
 const ItemDetail = ({ lista }) => {
   console.log(lista);
   return (
