@@ -21,7 +21,7 @@ const data = [
     precio: 350,
     img: "/Imagenes/3.jpg",
     stock: 8,
-    category: "ipa",
+    category: "roja",
   },
   {
     id: "4",
@@ -29,7 +29,7 @@ const data = [
     precio: 320,
     img: "/Imagenes/4.jpg",
     stock: 7,
-    category: "roja",
+    category: "rubia",
   },
   {
     id: "5",
@@ -37,7 +37,7 @@ const data = [
     precio: 300,
     img: "/Imagenes/1.jpg",
     stock: 10,
-    category: "roja",
+    category: "ipa",
   },
   {
     id: "6",
@@ -45,7 +45,7 @@ const data = [
     precio: 300,
     img: "/Imagenes/2.jpg",
     stock: 9,
-    category: "roja",
+    category: "ipa",
   },
   {
     id: "7",
@@ -53,7 +53,7 @@ const data = [
     precio: 350,
     img: "/Imagenes/3.jpg",
     stock: 8,
-    category: "rubia",
+    category: "roja",
   },
   {
     id: "8",
