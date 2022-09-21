@@ -1,16 +1,19 @@
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ lista }) => {
+  //Creo un estado Booleano para poder renderizar condicionalmente al agregar un producto
   const [goToCart, setGoToCart] = useState(true);
 
+  const { addCarrito } = useContext(CartContext);
+
   const agregar = (cantidad) => {
-    /*   alert(`Agregaste ${cantidad} productos al carrito`); */
     setGoToCart(false);
+    addCarrito(lista, cantidad, lista.stock - cantidad);
   };
-  console.log(lista);
   return (
     <>
       <div className="itemDetallado">

@@ -4,12 +4,11 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartContext, cartContext } from "./Context/cartContext";
-import { CartProvider } from "./Context/CartProvider";
+import CartProvider from "./Context/CartProvider";
 
 function App() {
   return (
-    <CartContext.Provider value={[]}>
+    <CartProvider>
       <BrowserRouter>
         <div className="App">
           <Navbar />
@@ -26,7 +25,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
