@@ -1,0 +1,18 @@
+.Cart{
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cart_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Cart img {
+width: 200px;
+}

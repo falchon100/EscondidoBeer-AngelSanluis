@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
+import { getFirestore, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   const [producList, setProductList] = useState([]);
@@ -32,6 +34,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <>
       <p className="titulo">{greeting} </p>
+      <Link to={"/cart"}>Carrito</Link>
       <ItemList lista={producList} />
     </>
   );

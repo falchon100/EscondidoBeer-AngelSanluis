@@ -7,3 +7,8 @@
     border: solid 2px grey;
     width: 400px;
 }
+
+.lista{
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));}

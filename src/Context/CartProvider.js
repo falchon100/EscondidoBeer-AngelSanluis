@@ -4,10 +4,6 @@ import { CartContext } from "./CartContext";
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   const addCarrito = (item, cantidad, stock) => {
     const existe = cart.find((elemento) => elemento.id === item.id);
     if (existe) {
@@ -23,8 +19,20 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  const removeItem = (productId) => {
+    let nuevoArreglo = [];
+    cart.forEach((product) => {
+      if (product.id === productId) {
+        console.log(product);
+      } else {
+        nuevoArreglo.push(product);
+      }
+    });
+    setCart(nuevoArreglo);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addCarrito }}>
+    <CartContext.Provider value={{ cart, addCarrito, removeItem }}>
       {children}
     </CartContext.Provider>
   );
