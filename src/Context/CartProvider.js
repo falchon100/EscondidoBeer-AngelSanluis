@@ -4,6 +4,7 @@ import { CartContext } from "./CartContext";
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  //con esta funcion agrego productos a mi carrito
   const addCarrito = (item, cantidad, stock) => {
     const existe = cart.find((elemento) => elemento.id === item.id);
     if (existe) {
@@ -19,6 +20,7 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  //con esta funcion elimino un producto de mi carrito
   const removeItem = (productId) => {
     let nuevoArreglo = [];
     cart.forEach((product) => {

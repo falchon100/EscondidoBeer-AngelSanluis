@@ -3,8 +3,11 @@ import "../../components/Cartwidget/Cartwidget.js";
 import Cartwidget from "../../components/Cartwidget/Cartwidget.js";
 import Hamb from "../Hamb/Hamb";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
+import { useContext } from "react";
 
 export function Navbar() {
+  const { cart } = useContext(CartContext);
   return (
     <nav className="nav container-fluid">
       <Link to={"/"} className="nav_a_contenedor">
@@ -26,7 +29,11 @@ export function Navbar() {
             Rubia
           </Link>
         </li>
-        <Cartwidget />
+        {cart.lenght !== 0 && (
+          <Link to={"/cart"}>
+            <Cartwidget />
+          </Link>
+        )}
       </ul>
       <Hamb />
     </nav>
