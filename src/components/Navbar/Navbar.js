@@ -29,11 +29,11 @@ export function Navbar() {
             Rubia
           </Link>
         </li>
-        {cart.lenght !== 0 && (
-          <Link to={"/cart"}>
+        {cart.length !== 0 ? (
+          <Link to={`/cart`}>
             <Cartwidget />
           </Link>
-        )}
+        ) : null}
       </ul>
       <Hamb />
     </nav>
