@@ -25,7 +25,7 @@ const ItemDetail = ({ lista }) => {
           <ItemCount initial={1} stock={lista.stock} onAdd={agregar} />
         ) : (
           <>
-            <Link to={"/cart"}>Finalizar Compra</Link>
+            <Link to={"/cart"}>Terminar Compra</Link>
             <Link to={"/"}> Volver </Link>{" "}
           </>
         )}
