@@ -1,35 +1,51 @@
 import React from "react";
-import { data } from "../mockData";
 import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import { getFirestore, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  query,
+  where,
+} from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   const [producList, setProductList] = useState([]);
   const { categoryName } = useParams();
 
-  const filtrado = (info) => {
-    if (categoryName) {
-      setProductList(info.filter((info) => info.category == categoryName));
-    } else {
-      setProductList(info);
-    }
-  };
-
   useEffect(() => {
-    getProducts.then((response) => {
-      filtrado(response);
-    });
+    getProducts();
   }, [categoryName]);
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 1000);
-  });
+  const getProducts = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "items");
+
+    if (categoryName) {
+      const queryFilter = query(
+        querySnapshot,
+        where("category", "==", categoryName)
+      );
+      getDocs(queryFilter).then((response) => {
+        const data = response.docs.map((product) => {
+          return { id: product.id, ...product.data() };
+        });
+        setProductList(data);
+      });
+    } else {
+      getDocs(querySnapshot)
+        .then((response) => {
+          const data = response.docs.map((product) => {
+            return { id: product.id, ...product.data() };
+          });
+          setProductList(data);
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <>
@@ -40,3 +56,27 @@ const ItemListContainer = ({ greeting }) => {
   );
 };
 export default ItemListContainer;
+
+/* const getProducts = () =>{
+  const db = getFirestore();
+  const querySnapshot = collection(db, item);
+  if (categoryName) {
+    const queryFilter = query(querySnapshot, where("category", "==", categoryName))
+    getDocs(queryFilter)
+      .then((response)=> {
+      const data = response.docs.map((doc) => {
+      return { id: doc.id, ...doc.data() };
+    })
+    setProductList(data)
+  }).catch((err)=> console.log(err))
+  }else {
+    getDocs(querySnapshot)
+      .then((response)=> {
+      const data = response.docs.map((doc) => {
+      return { id: doc.id, ...doc.data() };
+    })
+    setProductList(data)
+  }).catch((err)=> console.log(err))
+  }
+
+} */

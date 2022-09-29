@@ -5,29 +5,17 @@ import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const db = getFirestore();
-
-  const queryDoc = doc(db, "items", "SGx05u7RLuAiA3pyGgaO");
-  getDoc(queryDoc).then((res) => {
-    console.log(res.data());
-  });
-
   const [producList, setProductList] = useState({});
   const { id } = useParams();
+  const db = getFirestore();
 
-  useEffect(() => {
-    const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 1000);
-    });
+  const queryDoc = doc(db, "items", id);
 
-    getProducts
-      .then((response) => {
-        setProductList(response.find((prod) => prod.id === id));
-      })
-      .catch((error) => console.log(error));
-  }, [id]); // Aca esta el parametro que falto.
+  getDoc(queryDoc)
+    .then((res) => {
+      setProductList({ id: res.id, ...res.data() });
+    })
+    .catch((err) => console.log(err));
 
   //Aca verifica si el producto existe y una vez que existe renderiza el componente
   return <>{producList && <ItemDetail lista={producList} />}</>;
