@@ -33,8 +33,14 @@ const CartProvider = ({ children }) => {
     setCart(nuevoArreglo);
   };
 
+  const clearCarrito = () => {
+    setCart([]);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addCarrito, removeItem }}>
+    <CartContext.Provider
+      value={{ cart, addCarrito, removeItem, clearCarrito }}
+    >
       {children}
     </CartContext.Provider>
   );
