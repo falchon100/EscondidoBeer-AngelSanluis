@@ -10,8 +10,6 @@ color: white;
 font-family: 'Fredoka One', cursive
 }
 
-.nav_li{
-}
 
 .nav_img{
     width: 100%;
@@ -37,7 +35,6 @@ font-family: 'Fredoka One', cursive
     color: white;
     align-items: center;
     justify-content: space-around;
-    display: none;
 }
 .nav_li{
     padding: 5px;
@@ -60,7 +57,7 @@ font-family: 'Fredoka One', cursive
 .nav_hamb{
     font-size: 10px;
     font-size: 45px;
-    position: absolute;
+/*     position: absolute; */
     right:4%;
     top: 3%;
     display: block;

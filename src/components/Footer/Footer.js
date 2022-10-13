@@ -1,1 +1,10 @@
-import "../style/Footer.css"
+import React from "react";
+import "./Footer.css";
+
+export const Footer = () => {
+  return (
+    <div className="footer">
+      Creado por <span></span>
+    </div>
+  );
+};

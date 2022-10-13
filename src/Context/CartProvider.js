@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  //con esta funcion agrego productos a mi carrito
+  //con esta funcion |o productos a mi carrito
   const addCarrito = (item, cantidad, stock) => {
     const existe = cart.find((elemento) => elemento.id === item.id);
     if (existe) {
@@ -17,6 +18,7 @@ const CartProvider = ({ children }) => {
       }
     } else {
       setCart([...cart, { ...item, cantidad, stock }]);
+      toast.success(`se agrego ${cantidad} ${item.title}`);
     }
   };
 
@@ -41,6 +43,7 @@ const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{ cart, addCarrito, removeItem, clearCarrito }}
     >
+      <Toaster position="top-right" reverseOrder={false} />
       {children}
     </CartContext.Provider>
   );

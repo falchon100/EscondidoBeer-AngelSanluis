@@ -50,7 +50,9 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <>
       <p className="titulo">{greeting} </p>
-      <Link to={"/cart"}>Carrito</Link>
+      <Link className="btn btn-violet mt-3 mb-3" to={"/cart"}>
+        Volver al Carrito
+      </Link>
       <ItemList lista={producList} />
     </>
   );

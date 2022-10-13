@@ -14,6 +14,10 @@ export const ItemList = ({ lista }) => {
             img={product.img}
             stock={product.stock}
             id={product.id}
+            category={product.category}
+            stars={product.stars}
+            alcohol={product.alcohol}
+            description={product.description}
           />
         ))}
       </div>

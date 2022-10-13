@@ -65,12 +65,15 @@ const Cart = () => {
 
   return (
     <>
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="top-right" reverseOrder={false} />
       <h1>Carrito de Compras</h1>
       {cart.length === 0 ? (
         <>
           <h2>No tienes productos en el carrito!</h2>
-          <Link to={"/"}> Volver a comprar</Link>
+          <Link className="btn btn-violet mt-5 mb-5" to={"/"}>
+            {" "}
+            Volver a comprar
+          </Link>
         </>
       ) : (
         <>
@@ -81,7 +84,10 @@ const Cart = () => {
                 <h4>${item.precio} </h4>
                 <img src={item.img} />
                 <h3>Cantidades :{item.cantidad} </h3>
-                <button onClick={() => removeItem(item.id)}>
+                <button
+                  className="btn btn-violet"
+                  onClick={() => removeItem(item.id)}
+                >
                   Eliminar producto
                 </button>
               </div>
@@ -92,11 +98,17 @@ const Cart = () => {
             {cart.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)}{" "}
           </h1>
           <Link to={"/"}>
-            <button>volver</button>{" "}
+            <button className="btn btn-violet">Volver</button>{" "}
           </Link>
-          <form onSubmit={buy}>
+          <hr class="my-4"></hr>
+          <form
+            className="form form-group mx-auto shadow mb-5 mt-5 container"
+            onSubmit={buy}
+          >
+            <h2>Completa los datos para generar la orden</h2>
             <label htmlFor="name">Nombre</label>
             <input
+              className="form-control"
               id="name"
               name="name"
               type="name"
@@ -105,13 +117,16 @@ const Cart = () => {
             />
             <label htmlFor="email">Email</label>
             <input
+              className="form-control"
               id="email"
               name="email"
               type="email"
               value={values.email}
               onChange={handleChange}
             />
-            <button type="submit">Crear Orden</button>
+            <button className="btn btn-violet mt-2 mb-2" type="submit">
+              Crear Orden
+            </button>
           </form>
         </>
       )}
