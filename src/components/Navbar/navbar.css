@@ -36,6 +36,7 @@ font-family: 'Fredoka One', cursive
     align-items: center;
     justify-content: space-around;
 }
+
 .nav_li{
     padding: 5px;
     padding: 10px;
@@ -61,6 +62,10 @@ font-family: 'Fredoka One', cursive
     right:4%;
     top: 3%;
     display: block;
+}
+
+.dn{
+    display: none;
 }
 
 @media only screen and (min-width: 500px){

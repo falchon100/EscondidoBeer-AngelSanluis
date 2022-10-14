@@ -1,18 +1,31 @@
 import React from "react";
 import "./ItemCount.css";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [items, setitems] = useState(initial);
   const quitar = () => {
-    items > 0 ? setitems(items - 1) : alert("no tengo items");
+    items > 0
+      ? setitems(items - 1)
+      : toast.error("No puede restar en negativo", {
+          position: "top-center",
+        });
   };
   const agregar = () => {
-    items < stock ? setitems(items + 1) : alert("ya tiene el maximo de items");
+    items < stock
+      ? setitems(items + 1)
+      : toast.error("Ya tiene el maximo de items", {
+          position: "top-center",
+        });
   };
 
   const handleOnAdd = () => {
-    if (items <= stock) onAdd(items);
+    if (items == 0) {
+      return;
+    } else {
+      if (items <= stock) onAdd(items);
+    }
   };
   return (
     <div className="pb-3">

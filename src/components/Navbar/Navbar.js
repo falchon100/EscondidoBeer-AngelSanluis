@@ -18,7 +18,7 @@ export function Navbar() {
       <Link to={"/"} className="nav_a_contenedor">
         <img className="nav_img" src={require("../../image/1.jpg")} alt="" />
       </Link>
-      <ul className={handlenav ? `nav_ul` : `nav_ul d-none`}>
+      <ul className={handlenav ? `nav_ul` : `nav_ul dn`}>
         <li className="nav_li">
           <Link to={"/category/ipa"} className="nav-li">
             Ipa
