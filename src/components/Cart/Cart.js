@@ -100,7 +100,7 @@ const Cart = () => {
           <Link to={"/"}>
             <button className="btn btn-violet">Volver</button>{" "}
           </Link>
-          <hr class="my-4"></hr>
+          <hr className="my-4"></hr>
           <form
             className="form form-group mx-auto shadow mb-5 mt-5 container"
             onSubmit={buy}
